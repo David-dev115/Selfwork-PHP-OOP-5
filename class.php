@@ -13,11 +13,11 @@
 
 
 
-abstract class Documentario{
+abstract class Category{
     abstract public function getMyCategory();
 }
 
-class Attualita extends Documentario{
+class Attualita extends Category{
 
     public function getMyCategory(){
         echo "Sezione dedicata all'Attualità\n";
@@ -25,7 +25,7 @@ class Attualita extends Documentario{
 
 }
 
-class Sport extends Documentario{
+class Sport extends Category{
 
     public function getMyCategory(){
         echo "Sezione dedicata allo Sport\n";
@@ -33,7 +33,7 @@ class Sport extends Documentario{
 
 }
 
-class Gossip extends Documentario{
+class Gossip extends Category{
 
     public function getMyCategory(){
         echo "Sezione dedicata al Gossip\n";
@@ -41,7 +41,7 @@ class Gossip extends Documentario{
 
 }
 
-class Storia extends Documentario{
+class Storia extends Category{
 
     public function getMyCategory(){
         echo "Sezione dedicata alla Storia\n";
@@ -49,11 +49,11 @@ class Storia extends Documentario{
 
 }
 
-class Category {
+class Documentario {
 
     public $category;
 
-    public function __construct(Documentario $_category){
+    public function __construct(Category $_category){
         $this->category = $_category;
     }
 
@@ -63,6 +63,6 @@ class Category {
 }
 
 
-$controCampo = new Category (new Sport);
+$controCampo = new Documentario (new Sport);
 // print_r($controCampo);
 $controCampo->category();
